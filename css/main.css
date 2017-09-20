@@ -1,0 +1,576 @@
+* {
+	margin: 0 auto;
+}
+
+body {
+	font-family: "Tahoma";
+}
+
+div {
+	outline: 0px dotted cyan;
+}
+
+.error {
+	color: red;
+}
+
+/*HEADER*/
+.all-content > .header {
+	background: url(../img/header-bg.png) center no-repeat;
+	background-size: cover;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 0px;
+}
+
+.all-content > .header > .transparent-menu-bg {
+	position: absolute;
+	top: 0px;
+	z-index: 1;
+	width: 100%;
+	height: 155px;
+	background-color: rgba(0,0,0,0.2);
+}
+
+.all-content > .header > .container {
+	margin-bottom: -31px;
+	position: relative;
+	z-index: 10;
+}
+
+/*header menu*/
+.navbar {
+	margin-bottom: 0px;
+}
+
+.navbar-header > .navbar-toggle {
+	border: 1px solid #000;
+	margin-top: 0px;
+	margin-bottom: 40px;
+}
+
+.navbar-header > .navbar-toggle > span {
+	border: 1px solid #000;
+}
+
+.nav-pills > li > a {
+	color: #fff;
+	font-size: 14px;
+	padding-bottom: 15px;
+	position: relative;
+	z-index: 20;
+}
+
+.nav-pills > li > a, .nav-pills > li > a:focus, .nav-pills > li > a:hover,
+.nav-pills > li.active > a, 
+.nav-pills > li.active > a:focus, 
+.nav-pills > li.active > a:hover {
+	background-color: transparent;
+}
+
+.nav-pills > li.active > a {
+	color: #000;
+	border-bottom: 2px solid #000;
+	border-radius: 0px;
+}
+
+.nav-pills > li:hover > a,
+.nav-pills > li.active:hover > a {
+	color: orange;
+}
+
+.nav-pills > li > a > img {
+	float: left;
+	border-radius: 50px 50px 50px 50px;
+	margin-right: 10px;
+	width: 66px;
+	bottom: 26px;
+	position: relative;
+}
+
+.pull-right > li:hover > a > img {
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.pull-right > li > a {
+	height: 46px;
+}
+
+.nav-pills > li > a > div {
+	float: right;
+}
+
+.nav-pills:last-child{
+	float: right;
+}
+
+@media only screen and (max-width: 768px) {
+	.all-content > .header > .transparent-menu-bg {
+		position: absolute;
+		height: 85px;
+		background-color: rgba(0,0,0,0.2);
+	}
+
+	.navbar-collapse {
+		background-color: rgba(0,0,0,0.2);
+	}
+
+	.nav-pills > li {
+		min-width: 80%;
+	}
+
+	.pull-right > li > a > img {
+		width: 30%;
+		position: relative;
+		bottom: 10px;
+		margin-bottom: 25px;
+	}
+
+	.pull-right > li > a > div {
+		position: relative;
+		right: 25px;
+	}
+}
+
+@media only screen and (max-width: 1092px) and (min-width: 768px) {
+	.nav-pills > li {
+		max-width: 120px;
+		margin-bottom: 25px;
+	}
+
+	ul.nav-pills:last-child > li:last-child > a > img {
+		width: 40%;
+		position: relative;
+		bottom: 5px;
+		left: 30px;
+	}
+
+	.basket-title {
+		display: none;
+	} 
+
+	ul.nav-pills:last-child > li:last-child {
+		max-width: inherit;
+	}
+}
+
+@media only screen and (max-width: 1092px) {
+	.nav-pills.pull-right {
+		float: left!important;
+	}
+
+	.nav-pills > li.active > a {
+		border-bottom: 0px solid #000;
+	}
+}
+/*header menu*/
+
+/*header logo-bar*/
+.logo-bar {
+	background-color: #fff;
+	min-height: 100px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	position: relative;
+	z-index: 10;
+}
+
+.logo-bar > div > div {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+/*header logo*/
+.logo-bar > div > div > div > a > img {
+	width: 270px;
+	margin-bottom: 10px;
+}
+/*./header logo*/
+
+/*header phones list*/
+.logo-bar > div > div > div {
+	padding: 0px;
+}
+
+.logo-bar > div > div > div > ul {
+	list-style-type: none; 
+}
+
+.logo-bar > div > div > div > ul > li {
+	font-size: 1.8em;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.logo-bar > div > div > div > ul > li > span {
+	font-size: 0.7em;
+}
+
+.logo-bar > div > div > div > ul > li:nth-child(1) > span:before {
+	content: "";
+	background: url(../img/mts-icon.png) no-repeat;
+	display: inline-block;  
+    height: 23px;  
+    width: 45px;
+}
+
+.logo-bar > div > div > div > ul > li:nth-child(2) > span:before {
+	content: "";
+	background: url(../img/velcom-icon.png) no-repeat;
+	display: inline-block;  
+    height: 23px;  
+    width: 45px;
+    position: relative;
+    left: 15px;
+}
+
+@media only screen and (max-width: 400px) {
+	.logo-bar > div > div > div > ul > li {
+		font-size: 1.6em;
+	}
+
+	.logo-bar > div > div > div > ul > li > span {
+		font-size: 0.4em;
+	}
+}
+/*./header phones list*/
+
+/*callback-button*/
+.callback-button {
+	background-color: #000;
+	text-align: center;
+	min-width: 80px;
+	margin-left: 15px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	position: relative;
+	top: 40px;
+}
+
+.callback-button:hover {
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.callback-button > p {
+	color: #FDF4CA;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0px;
+}
+/*./callback-button*/
+
+@media only screen and (max-width: 768px) {
+	.logo-bar > div > div > div > img {
+		width: 60%;
+	}
+
+	.logo-bar > div > div > div > img, 
+	.logo-bar > div > div > div > table {
+		position: relative;
+		left: 15px;
+	}
+
+	.callback-button {
+		top: 12px;
+		margin-left: 0px;
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1092px) {
+	.logo-bar > div > div > div > img {
+		width: 200px;
+	}
+}
+/*./header logo-bar*/
+
+/*slider*/
+.slider {
+	padding-top: 10px;
+}
+
+.slider > div > .container > .slide {
+	margin-bottom: 60px;
+}
+
+.slider > div > .container > .slide > .carousel-inner > .item > div  {
+	opacity: 0;
+	padding-bottom: 10px;
+}
+
+.slide-custom-controls > a > img {
+	position: relative;
+	top: 40px;
+}
+
+
+
+.carousel-control.right > img, 
+.carousel-control.left > img  {
+	margin-top: 185%;
+}
+
+@media only screen and (max-width: 768px) {
+	.carousel-control.right > img, 
+	.carousel-control.left > img  {
+		margin-top: 175%;
+		width: 30%;
+	}
+}
+
+/*/.slider*/
+/*./HEADER*/
+
+/*CONTENT*/
+.content {
+	position: relative;
+	z-index: 10;
+	margin-top: 0;
+	padding-top: 0;
+	background-image: url(../img/content-bg.png);
+	margin-bottom: 0px;
+}
+
+/*breadcrumbs*/
+.content > .breadcrumbs {
+	background-color: #918274;
+	padding: 0;
+	color: #FDF4CA;
+}
+
+.content > .breadcrumbs > div > div {
+	margin-top: 0px;
+	margin-left: -5px;
+	padding: 0;
+}
+
+.content > .breadcrumbs > div > div > div > p {
+	font-size: 1.0em;
+	position: relative;
+	bottom: 3px;
+}
+
+@media only screen and (max-width: 768px) {
+	.content > .breadcrumbs > div > div > div > p {
+		margin-top: 15px; 
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.content > .breadcrumbs > div > div {
+		margin-top: 20px;
+	}
+}
+/*./breadcrumbs*/
+
+main > div > div {
+	padding-right: 20px;
+}
+
+/*sidebar*/
+main > div > div > div > div > div > form > input {
+	width: 100%;
+	margin-left: 0px;
+	padding-left: 10px;
+	margin-bottom: 45px;
+}
+
+.accordion > div > div {
+	border-width: 0px;
+	background: transparent;
+}
+
+.panel-group .panel-heading+.panel-collapse>.list-group, 
+.panel-group .panel-heading+.panel-collapse>.panel-body {
+	border-width: 0px;
+}
+
+.accordion > div > div > .panel-heading {
+	border-bottom: 1px solid #000;
+	background: transparent;
+}
+
+.accordion > div > div > .panel-heading > h4 > a {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #000;
+	position: relative;
+	right: 15px;
+}
+
+.accordion > div > div > .panel-heading > h4 > a:hover, 
+.accordion > div > div > .panel-heading > h4 > a:focus {
+	text-decoration: none;
+}
+
+.panel-body > ul {
+	list-style: none;
+	line-height: 2.0em;
+}
+
+.panel-body > ul > li > a {
+	list-style: none;
+	position: relative;
+	right: 55px;
+	color: #000;
+}
+
+.panel-body > ul > li > a:hover,
+.panel-body > ul > li > a:focus {
+	text-decoration: none;
+	color: #F25674;
+}
+
+@media only screen and (min-width: 769px) {
+	main > div > div > div {
+		margin-left: -5px;
+	}
+}       
+/*./sidebar*/
+
+/*content*/
+main > div > div > div > div:nth-child(2) > div:first-child {
+	border-bottom: 2px solid black;
+	margin-bottom: 45px;
+}
+
+/*content-header*/
+main > div > div > div > div:nth-child(2) > div > p {
+	text-transform: uppercase;
+	font-size: 1.0em;
+	margin-left: 20px;
+	margin-bottom: 3px;
+}
+/*./content-header*/
+
+main > div > div > div > div:nth-child(2) > div:nth-child(2) {
+	text-align: center;
+}
+
+/*product-block*/
+main > div > div > div > div:nth-child(2) > div:nth-child(2) > div {
+	background-color: #fff;
+	margin: 0px;
+	margin-bottom: 15px;
+}
+
+main > div > div > div > div:nth-child(2) > div:nth-child(2) > div > div > a > img {
+	width: 100%;
+	margin-top: 15px;
+}
+/*./product-block*/
+
+/*discount-mark*/
+main > div > div > div > div:nth-child(2) > div:nth-child(2) > div > div:first-child > img {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+/*./discount-mark*/
+
+/*product-name*/
+main > div > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) {
+	margin-top: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+/*./product-name*/
+
+/*product-price-block*/
+main > div > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(3) {
+	height: 28px;
+	width: 100%;
+	color: #F25674;
+
+}
+
+main > div > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(3) > p {
+	font-size: 1.0em;
+	line-height: 0.1em;
+}
+/*./product-price-block*/
+
+/*discount-price*/
+main > div > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(3) > p:nth-child(2) {
+	color: #83737C;
+	font-weight: bold;
+}
+/*./discount-price*/
+
+/*buy-button*/
+main > div > div > div > div:nth-child(2) > div:nth-child(2) > div > form > input {
+	margin-bottom: 10px;
+	background-color: #F25674;
+	border: 2px solid #F25674;
+	padding: 5px 15px 5px 15px;
+	color: #fff;
+	font-weight: bold;
+}
+
+main > div > div > div > div:nth-child(2) > div:nth-child(2) > div > form > input:hover {
+	border: 2px solid #000;
+	background-color: #fff;
+	color: #000;
+}
+/*./buy-button*/
+
+/*paginator*/
+main > div > div > div > div:nth-child(2) > div:nth-child(3) > ul > li {
+	display: inline-block;
+	list-style-type: none;
+	font-size: 1.4em;
+	padding: 5px;
+}
+
+main > div > div > div > div:nth-child(2) > div:nth-child(3) > ul > li > a {
+	color: #000;
+	font-weight: bold; 
+}
+
+main > div > div > div > div:nth-child(2) > div:nth-child(3) > ul > li > a:hover,
+main > div > div > div > div:nth-child(2) > div:nth-child(3) > ul > li > a:focus {
+	color: #F25674;
+	text-decoration: none;
+}
+/*./paginator*/
+
+@media only screen and (min-width: 769px) {
+	main > div > div > div > div:nth-child(2) > div:nth-child(2) > div {
+		width: 32%;
+		margin: 5px;
+	}
+
+	main > div > div > div > div:nth-child(2) > div:nth-child(3) > ul > li {
+		font-size: 1.6em;
+	}
+}  
+/*./content*/
+/*./CONTENT*/
+
+/*FOOTER*/
+footer > .footer {
+	background-color: #918274;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+	margin: 0px; 
+	min-height: 100px;
+}
+
+footer > .footer > div > div > div > a > img {
+	margin: 10px;
+}
+
+footer > .footer > div > div > div {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+footer > .footer > div > div > div:nth-child(2) {
+	font-size: 1.3em;
+}
+
+footer > .footer > div > div > div:nth-child(3) {
+	font-size: 0.8em;
+}
+/*./FOOTER*/
