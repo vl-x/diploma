@@ -25,9 +25,9 @@
 							if($page == 3)include_once('pages/payment.php');
 							if($page == 4)include_once('pages/contacts.php');
 							if($page == 5)include_once('pages/registration.php'); 
-							if($page == 6)include_once('pages/cart.php');
-							if($page == 7)include_once('pages/submit.php'); 
-							if($page == 8)include_once('pages/admin_panel.php'); 
+							if($page == 6)include_once('pages/submit.php'); 
+							if($page == 7)include_once('pages/admin_panel.php'); 
+							if($page == 99)include_once('pages/cart.php');
 						}
 					?>
 				</div>

@@ -7,24 +7,18 @@ if (isset($_GET['action'])) {
 	if ($_GET['action'] == 'logout') {
 		unset($_SESSION['user']);
 		session_destroy();
-		header("Location: index.php?page=7");
+		header("Location: index.php?page=6");
 	}
 }
 
 include_once('pages/functions.php');  // подключаем файл с функциями
 
 
-
 if(isset($_POST['submitbtn'])) {
 	if (!empty($_POST["login"]) && !empty($_POST["pass"])) {
-	    //var_dump($_POST);
-	    //die('y');
 	    $res = login($_POST["login"],$_POST["pass"]);
-	    //var_dump($_SESSION);
 	}
 }
- 
-    
 					
 ?>
 

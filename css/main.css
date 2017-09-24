@@ -244,6 +244,7 @@ div {
 	padding-top: 7px;
 	padding-bottom: 7px;
 	position: relative;
+	z-index: 25;
 	top: 40px;
 }
 

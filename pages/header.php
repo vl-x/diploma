@@ -1,3 +1,52 @@
+<?php 
+// switching on mailerPHP
+
+$name = $_POST['popup-name'];
+$phone = $_POST['popup-phone'];
+$path = 'files';
+
+/*if(isset($_POST['submitmailer'])) {
+	var_dump($name);
+	var_dump($phone);
+}*/
+
+require_once "lib/mail/lib/class.phpmailer.php";
+
+$mail = new PHPMailer;
+
+    $mail->setFrom('coolalexnov@gmail.com', 'От кого');
+    $mail->addAddress('kusenkov@gmail.com','Кому');
+
+    for ($ct = 0; $ct < count($_FILES['userfile']['tmp_name']); $ct++) {
+        $uploadfile = tempnam(sys_get_temp_dir(), sha1($_FILES['userfile']['name'][$ct]));
+        $filename = $_FILES['userfile']['name'][$ct];
+        if (move_uploaded_file($_FILES['userfile']['tmp_name'][$ct], $uploadfile)) {
+            $mail->addAttachment($uploadfile, $filename);
+        } else {
+            $msg .= 'Failed to move file to ' . $uploadfile;
+        }
+
+    }
+
+    $mail->isHTML(true);                                  // Set email format to HTML
+
+    $mail->Subject = 'Тема';
+    $mail->Body = "На вашем сайте пользователь ".$name." запросил обратный звонок. Перезвоните ему, пожалуйста, по номеру ".$phone.".";
+
+    if (isset($_FILES['uploaded_file']) &&
+	    $_FILES['uploaded_file']['error'] == UPLOAD_ERR_OK) {
+	    $mail->AddAttachment($_FILES['uploaded_file']['tmp_name'],
+	                         $_FILES['uploaded_file']['name']);
+	}
+
+    if($mail->send()) {
+      $success = "Отправлено успешно";
+    } else {
+      $error[] = $mail->ErrorInfo;
+    }
+
+?>
+
 <!-- HEADER -->
 <div class="jumbotron header">
 	<div class="transparent-menu-bg">
@@ -31,7 +80,7 @@
 					</ul>
 				</div>
 				<div class="col-md-2 col-sm-4 col-xs-12 pull-left">
-					<a href="#">
+					<a href="#myModal" id="filter" data-toggle="modal">
 						<div class="callback-button">
 							<p>Заказать звонок</p>
 						</div>
@@ -40,6 +89,34 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	    	<div class="modal-content">
+	        	<div class="modal-header">
+	          		Закажите обратный звонок
+	        	</div>
+
+		        <div class="modal-body">
+		        	<div>
+		        		<form action="index.php" method="post" enctype="multipart/form-data">
+							<input type="text" name="popup-name" placeholder="Имя">
+							<br>
+							<input type="text" name="popup-phone" placeholder="Телефон">
+							<br>
+							<input type="file" name="uploaded_file" id="uploaded_file" />
+							<br>
+  							<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+		        			<input type="submit" class="btn btn-primary" name="submitmailer" value="Отправить">
+		        		</form>
+		        	</div>
+
+			    </div>
+	    	</div>
+	    </div>
+	</div>
+	<!--./ Modal -->
 
 	<div class="container">
 		<div class="row">

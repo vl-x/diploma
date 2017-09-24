@@ -17,7 +17,7 @@
   {
   ?>
 
-  <form action="index.php?page=7" method="post"> 
+  <form action="index.php?page=6" method="post"> 
     <div class="form-group">
       <label for="login">Логин:</label>
       <input type="text" class="form-control" name="login">
@@ -42,7 +42,7 @@
      if (isset($_SESSION['user']['login'])) {
        echo $_SESSION['user']['login'];
        echo " <a href='index.php?action=logout'>Выйти</a>";
-     } else echo " <a href='index.php?page=7'>Вернутся к странице входа</a>";
+     } else echo " <a href='index.php?page=6'>Вернутся к странице входа</a>";
      
   }
   ?>
