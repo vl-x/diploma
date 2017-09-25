@@ -1,12 +1,18 @@
-<p>Контакты</p>
+<div class="col-md-12">
+	<h2>Контакты</h2>
+	<p>
+		<?php
 
-<form action="index.php" method="post" enctype="multipart/form-data">
-							<input type="text" name="popup-name" placeholder="Имя">
-							<br>
-							<input type="text" name="popup-phone" placeholder="Телефон">
-							<br>
-							<input type="file" name="uploaded_file" id="uploaded_file" />
-							<br>
-  							<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
-		        			<input type="submit" class="btn btn-primary" name="submitmailer" value="Отправить">
-		        		</form>
+		$link = connect(); 
+		$menu = find_all_from_pages_in_sumki();
+
+		for ($i=0; $i < count($menu); $i++) { 
+			$id = intval($menu[$i]['id']);
+			$content = $menu[$i]['content'];
+			if ($_SERVER['QUERY_STRING'] == 'page='.$id) {
+				echo $content;
+			}
+		}
+	    ?>
+	</p>
+</div>

@@ -18,7 +18,7 @@ $mail = new PHPMailer;
     $mail->addAddress('kusenkov@gmail.com','Кому');
 
     for ($ct = 0; $ct < count($_FILES['userfile']['tmp_name']); $ct++) {
-        $uploadfile = tempnam(sys_get_temp_dir(), sha1($_FILES['userfile']['name'][$ct]));
+        $uploadfile = 'c:/webservers/OpenServer/domains/localhost/php/diploma/1/files';
         $filename = $_FILES['userfile']['name'][$ct];
         if (move_uploaded_file($_FILES['userfile']['tmp_name'][$ct], $uploadfile)) {
             $mail->addAttachment($uploadfile, $filename);

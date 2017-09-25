@@ -1,6 +1,6 @@
 <div class="col-md-6">
 
-  <h3>Страница регистрации</h3>
+  <h2>Страница регистрации</h2>
 
   <?php
   $res = register($_POST["login"],$_POST["pass"],$_POST["pass2"],$_POST["email"]);

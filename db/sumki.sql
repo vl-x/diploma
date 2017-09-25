@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 18 2017 г., 15:30
+-- Время создания: Сен 24 2017 г., 03:20
 -- Версия сервера: 5.5.53
 -- Версия PHP: 5.5.38
 
@@ -53,29 +53,30 @@ INSERT INTO `admins` (`id`, `login`, `pass`, `email`, `roleid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `main_menu`
+-- Структура таблицы `pages`
 --
 
-CREATE TABLE `main_menu` (
+CREATE TABLE `pages` (
   `id` int(11) NOT NULL,
   `menu_name` varchar(30) NOT NULL,
+  `page_id` int(11) NOT NULL,
   `position` int(3) NOT NULL,
   `visible` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `main_menu`
+-- Дамп данных таблицы `pages`
 --
 
-INSERT INTO `main_menu` (`id`, `menu_name`, `position`, `visible`) VALUES
-(1, 'home', 1, 1),
-(2, 'about', 1, 1),
-(3, 'payment', 1, 1),
-(4, 'contacts', 1, 1),
-(5, 'registration', 1, 1),
-(6, 'cart', 1, 1),
-(7, 'submit', 1, 1),
-(8, 'admin_panel', 1, 1);
+INSERT INTO `pages` (`id`, `menu_name`, `page_id`, `position`, `visible`) VALUES
+(1, 'Главная', 1, 1, 1),
+(2, 'О магазине', 2, 2, 1),
+(3, 'Оплата и доставка', 3, 3, 1),
+(4, 'Контакты', 4, 4, 1),
+(5, 'Регистрация', 5, 5, 1),
+(6, 'Вход', 6, 6, 1),
+(7, 'Админка', 7, 7, 1),
+(8, 'Корзина', 99, 8, 1);
 
 --
 -- Индексы сохранённых таблиц
@@ -88,9 +89,9 @@ ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `main_menu`
+-- Индексы таблицы `pages`
 --
-ALTER TABLE `main_menu`
+ALTER TABLE `pages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -103,10 +104,10 @@ ALTER TABLE `main_menu`
 ALTER TABLE `admins`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
--- AUTO_INCREMENT для таблицы `main_menu`
+-- AUTO_INCREMENT для таблицы `pages`
 --
-ALTER TABLE `main_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE `pages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

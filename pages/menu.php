@@ -10,18 +10,15 @@
 <div id="navbar" class="collapse navbar-collapse">
 	<ul class="nav nav-pills pull-left">
 		<!-- для вытягивания класса активной ссылки -->
-
 		<?php
 			$link = connect(); 
 			$menu = find_all_from_pages_in_sumki();
 
-			for ($i=0; $i < count($menu)-1; $i++) { 
+			for ($i=0; $i < count($menu); $i++) { 
 				$page_id = $menu[$i]['page_id'];
 		?>			
 			<li class=<?php echo ($_SERVER['QUERY_STRING'] == 'page='.$page_id.'') ? "active" : "";?>>
-
 				<?php 
-
 					switch ($i) {
 						case '4':
 							if ($_SESSION['user']['login']) {
@@ -30,8 +27,7 @@
 							break;
 
 						case '5':
-							?>
-							
+							?>		
 								<?php 
 									if ($_SESSION['user']['login']) {
 								       echo "<a href='index.php?action=logout'>Выход из ".$_SESSION['user']['login']."</a>";
@@ -53,20 +49,17 @@
 							</a> <?php 
 							break; 
 				}?>
-
 			</li>
-
 		<?php	
 			}
 		?>
-
 	</ul>
 
 	<ul class="nav nav-pills pull-right">
 		<li <?php if ($_SERVER['QUERY_STRING'] == 'page='.$page_id='99'.'') echo 'class="active"'; ?>>
 			<a href="index.php?page=<?php echo $page_id='99'; ?>">
 				<img src="img/basket-icon.png" alt="cart">
-				<div><span class="basket-title"><?php echo $menu[$i]['menu_name']; ?> </span>( 3 )</div>
+				<div><span class="basket-title">Корзина </span>( 3 )</div>
 			</a>
 		</li>
 	</ul>
